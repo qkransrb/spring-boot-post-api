@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blog?useSSL=false&serverTimeZone=UTC
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+#        shoq_sql: true
+        format_sql: true
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  security:
+    user:
+      name: admin
+      password: admin
+      roles: ADMIN
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.springframework.security: DEBUG
